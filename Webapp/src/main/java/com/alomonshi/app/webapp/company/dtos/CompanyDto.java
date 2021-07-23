@@ -1,10 +1,12 @@
-package com.alomonshi.app.webapp.dtos;
+package com.alomonshi.app.webapp.company.dtos;
+import com.alomonshi.app.webapp.picture.dto.PictureDto;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import java.util.List;
 
 public class CompanyDto {
-    private Integer id;
+    private Long id;
 
     @NotNull
     @Pattern(regexp = "^[a-zA-Z0-9]+$")
@@ -15,11 +17,11 @@ public class CompanyDto {
 
     private List<PictureDto> pictureDtoList;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -1,9 +1,8 @@
-package com.alomonshi.app.webapp.controllers;
+package com.alomonshi.app.webapp.user.controller;
 
-import com.alomonshi.app.service.entity.User;
-import com.alomonshi.app.service.services.user.UserService;
-import com.alomonshi.app.webapp.dtos.CompanyDto;
-import com.alomonshi.app.webapp.dtos.UserDto;
+import com.alomonshi.app.service.user.entity.User;
+import com.alomonshi.app.service.user.service.UserService;
+import com.alomonshi.app.webapp.user.dto.UserDto;
 import com.alomonshi.user.impl.UserServiceImpl;
 
 import javax.validation.ConstraintViolation;
@@ -14,6 +13,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.core.Response;
 import java.util.Set;
 
 @Path("user")
@@ -27,13 +27,13 @@ public class UserController {
 
     @GET
     @Path("")
-    public UserDto getUser (@QueryParam("id") Long userId) {
+    public Response getUser (@QueryParam("id") Long userId) {
         UserDto userDto = new UserDto();
         User user = userService.get(userId);
         userDto.setId(user.getId());
         userDto.setName(user.getName());
         userDto.setEmail(user.getEmail());
-        return userDto;
+        return Response.ok(userDto).build();
     }
 
     @POST

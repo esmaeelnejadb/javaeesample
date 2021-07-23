@@ -1,7 +1,7 @@
 package com.alomonshi.user.impl;
 
-import com.alomonshi.app.service.entity.User;
-import com.alomonshi.app.service.services.user.UserService;
+import com.alomonshi.app.service.user.entity.User;
+import com.alomonshi.app.service.user.service.UserService;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.alomonshi.app.webapp.controllers;
+package com.alomonshi.app.webapp.homepage.controller;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

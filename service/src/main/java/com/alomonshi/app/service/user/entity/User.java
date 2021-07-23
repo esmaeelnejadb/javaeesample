@@ -1,4 +1,4 @@
-package com.alomonshi.app.service.entity;
+package com.alomonshi.app.service.user.entity;
 
 public class User {
     private Long id;

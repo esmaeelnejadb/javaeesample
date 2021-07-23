@@ -1,4 +1,6 @@
-package com.alomonshi.app.webapp.dtos;
+package com.alomonshi.app.webapp.user.dto;
+
+import com.alomonshi.app.service.user.validator.MobilePhone;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
@@ -16,6 +18,9 @@ public class UserDto {
 
     @Email
     private String email;
+
+    @MobilePhone(message = "Phone number is not right")
+    private String phoneNumber;
 
     public Long getId() {
         return id;
@@ -39,5 +44,13 @@ public class UserDto {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }

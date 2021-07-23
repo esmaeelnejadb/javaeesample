@@ -1,9 +1,9 @@
-package com.alomonshi.app.webapp.controllers;
+package com.alomonshi.app.webapp.company.controller;
 
 import com.alomonshi.app.company.impl.CompanyServiceImpl;
-import com.alomonshi.app.service.entity.Company;
-import com.alomonshi.app.service.services.company.CompanyService;
-import com.alomonshi.app.webapp.dtos.CompanyDto;
+import com.alomonshi.app.service.company.entity.Company;
+import com.alomonshi.app.service.company.services.CompanyService;
+import com.alomonshi.app.webapp.company.dtos.CompanyDto;
 
 import javax.validation.*;
 import javax.ws.rs.*;
@@ -23,9 +23,9 @@ public class CompanyController {
     @GET
     @Path("")
     @Produces(MediaType.APPLICATION_JSON)
-    public CompanyDto getCompany (@QueryParam("id") Integer id) {
+    public CompanyDto getCompany (@QueryParam("id") Long id) {
         CompanyDto companyDto = new CompanyDto();
-        Company company = companyService.getCompany(id);
+        Company company = companyService.get(id);
         if (company != null) {
             companyDto.setId(company.getId());
             companyDto.setName(company.getName());
@@ -51,6 +51,6 @@ public class CompanyController {
         company.setId(companyDto.getId());
         company.setName(companyDto.getName());
         company.setActive(false);
-        companyService.addCompany(company);
+        companyService.add(company);
     }
 }

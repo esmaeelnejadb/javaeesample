@@ -1,19 +1,17 @@
-package com.alomonshi.app.service.entity;
-
-import javax.validation.constraints.AssertTrue;
+package com.alomonshi.app.service.company.entity;
 
 public class Company {
 
-    private Integer id;
+    private Long id;
     private String name;
 
     private Boolean isActive;
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

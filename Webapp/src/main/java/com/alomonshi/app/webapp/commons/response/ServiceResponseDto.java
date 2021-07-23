@@ -1,4 +1,6 @@
-package com.alomonshi.app.webapp.dtos.response;
+package com.alomonshi.app.webapp.commons.response;
+
+import com.alomonshi.app.webapp.commons.message.ErrorMessage;
 
 import javax.xml.crypto.Data;
 import java.util.List;

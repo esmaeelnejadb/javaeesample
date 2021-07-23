@@ -1,8 +1,8 @@
-package com.alomonshi.app.webapp.dtos.response;
+package com.alomonshi.app.webapp.commons.message;
 
 public class ErrorMessage {
     private Integer messageId;
-    private Integer message;
+    private String message;
 
     public Integer getMessageId() {
         return messageId;
@@ -12,11 +12,11 @@ public class ErrorMessage {
         this.messageId = messageId;
     }
 
-    public Integer getMessage() {
+    public String getMessage() {
         return message;
     }
 
-    public void setMessage(Integer message) {
+    public void setMessage(String message) {
         this.message = message;
     }
 }

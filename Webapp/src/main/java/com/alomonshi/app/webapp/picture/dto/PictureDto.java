@@ -1,4 +1,4 @@
-package com.alomonshi.app.webapp.dtos;
+package com.alomonshi.app.webapp.picture.dto;
 
 import javax.validation.constraints.NotNull;
 

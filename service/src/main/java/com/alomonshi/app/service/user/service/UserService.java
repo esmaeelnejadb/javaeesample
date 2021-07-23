@@ -1,6 +1,6 @@
-package com.alomonshi.app.service.services.user;
+package com.alomonshi.app.service.user.service;
 
-import com.alomonshi.app.service.entity.User;
+import com.alomonshi.app.service.user.entity.User;
 
 public interface UserService {
 
