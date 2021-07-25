@@ -9,12 +9,11 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.Validator;
 import javax.validation.ValidatorFactory;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.QueryParam;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Path("user")
 public class UserController {
@@ -38,19 +37,20 @@ public class UserController {
 
     @POST
     @Path("")
-    public void addUser (UserDto userDto) {
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response addUser (UserDto userDto) {
 
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         Validator validator = factory.getValidator();
 
         Set<ConstraintViolation<UserDto>> violations = validator.validate(userDto);
 
-        for (ConstraintViolation<UserDto> violation: violations)
-            System.out.println(violation.getPropertyPath() + " " + violation.getMessage());
+        violations.forEach(f-> System.out.println(f.getMessage()));
 
         User user = new User();
         user.setName(userDto.getName());
         user.setEmail(userDto.getEmail());
         userService.add(user);
+        return Response.ok(violations.stream().map(ConstraintViolation::getMessage).collect(Collectors.toList())).build();
     }
 }

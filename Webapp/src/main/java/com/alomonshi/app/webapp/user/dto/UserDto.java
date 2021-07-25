@@ -11,7 +11,7 @@ public class UserDto {
 
     private Long id;
 
-    @NotNull
+    @NotNull(message = "name can not be null")
     @Pattern(regexp = "^[a-zA-Z0-9]+$")
     @Size(min = 6, max = 12)
     private String name;
@@ -19,7 +19,7 @@ public class UserDto {
     @Email
     private String email;
 
-    @MobilePhone(message = "Phone number is not right")
+    @MobilePhone(message = "{com.alomonshi.app.validation.mobilephone}")
     private String phoneNumber;
 
     public Long getId() {

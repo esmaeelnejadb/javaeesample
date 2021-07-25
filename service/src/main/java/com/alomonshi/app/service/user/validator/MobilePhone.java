@@ -1,14 +1,11 @@
 package com.alomonshi.app.service.user.validator;
 
 import javax.validation.Constraint;
+import javax.validation.ConstraintTarget;
 import javax.validation.Payload;
-import javax.validation.constraints.Pattern;
 import java.lang.annotation.*;
 
-@Pattern.List({
-        @Pattern(regexp = "[0][9][0-9]{9}")
-})
-@Constraint(validatedBy = {})
+@Constraint(validatedBy = {MobilePhoneValidator.class})
 @Documented
 @Target({
         ElementType.METHOD,
@@ -24,10 +21,7 @@ public @interface MobilePhone {
     String message();
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
-
-    @Pattern.List({
-            @Pattern(regexp = "[0][9][0-9]{9}")
-    })
+    ConstraintTarget target() default ConstraintTarget.PARAMETERS;
     @Constraint(validatedBy = {})
     @Documented
     @Target({
