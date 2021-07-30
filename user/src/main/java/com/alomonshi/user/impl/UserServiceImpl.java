@@ -3,10 +3,14 @@ package com.alomonshi.user.impl;
 import com.alomonshi.app.service.user.entity.User;
 import com.alomonshi.app.service.user.service.UserService;
 
+import javax.enterprise.context.RequestScoped;
 import java.util.ArrayList;
 import java.util.List;
 
+@RequestScoped
 public class UserServiceImpl implements UserService {
+
+    public UserServiceImpl() {}
 
     private static List<User> users = new ArrayList<>();
 

@@ -3,9 +3,11 @@ package com.alomonshi.app.company.impl;
 import com.alomonshi.app.service.company.entity.Company;
 import com.alomonshi.app.service.company.services.CompanyService;
 
+import javax.enterprise.context.RequestScoped;
 import java.util.ArrayList;
 import java.util.List;
 
+@RequestScoped
 public class CompanyServiceImpl implements CompanyService {
 
     private static List<Company> companies = new ArrayList<>();
