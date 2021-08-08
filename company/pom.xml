@@ -11,14 +11,13 @@
         <relativePath>../parent/pom.xml</relativePath>
     </parent>
 
-    <groupId>coma.alomonshi.app</groupId>
     <artifactId>company</artifactId>
     <version>${app.version}</version>
     <name>Company Module</name>
 
     <dependencies>
         <dependency>
-            <groupId>coma.alomonshi.app</groupId>
+            <groupId>com.alomonshi.app</groupId>
             <artifactId>service</artifactId>
         </dependency>
         <dependency>

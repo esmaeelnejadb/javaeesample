@@ -1,4 +1,4 @@
-package com.alomonshi.user.impl;
+package com.alomonshi.app.user.impl;
 
 import com.alomonshi.app.service.user.entity.User;
 import com.alomonshi.app.service.user.service.UserService;
@@ -8,9 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RequestScoped
-public class UserServiceImpl implements UserService {
-
-    public UserServiceImpl() {}
+public class UserMockServiceImpl implements UserService {
 
     private static List<User> users = new ArrayList<>();
 
@@ -35,8 +33,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User get(Long id) {
-        if (users.stream().anyMatch(o -> o.getId().equals(id)))
-            return users.stream().filter(o -> o.getId().equals(id)).findFirst().get();
-        return null;
+        User user = new User();
+        user.setId(10L);
+        user.setName("test");
+        user.setEmail("test@alomonshi.com");
+        return user;
     }
 }

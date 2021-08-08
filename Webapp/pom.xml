@@ -66,15 +66,15 @@
       <artifactId>cdi-api</artifactId>
     </dependency>
     <dependency>
-      <groupId>coma.alomonshi.app</groupId>
+      <groupId>com.alomonshi.app</groupId>
       <artifactId>service</artifactId>
     </dependency>
     <dependency>
-      <groupId>coma.alomonshi.app</groupId>
+      <groupId>com.alomonshi.app</groupId>
       <artifactId>company</artifactId>
     </dependency>
     <dependency>
-      <groupId>coma.alomonshi.app</groupId>
+      <groupId>com.alomonshi.app</groupId>
       <artifactId>user</artifactId>
     </dependency>
   </dependencies>

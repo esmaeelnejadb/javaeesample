@@ -21,17 +21,17 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>coma.alomonshi.app</groupId>
+                <groupId>com.alomonshi.app</groupId>
                 <artifactId>service</artifactId>
                 <version>${app.version}</version>
             </dependency>
             <dependency>
-                <groupId>coma.alomonshi.app</groupId>
+                <groupId>com.alomonshi.app</groupId>
                 <artifactId>company</artifactId>
                 <version>${app.version}</version>
             </dependency>
             <dependency>
-                <groupId>coma.alomonshi.app</groupId>
+                <groupId>com.alomonshi.app</groupId>
                 <artifactId>user</artifactId>
                 <version>${app.version}</version>
             </dependency>

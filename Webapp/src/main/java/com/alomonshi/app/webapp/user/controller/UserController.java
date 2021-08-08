@@ -1,5 +1,6 @@
 package com.alomonshi.app.webapp.user.controller;
 
+import com.alomonshi.app.service.commons.annotations.qualifiers.Produce;
 import com.alomonshi.app.service.user.entity.User;
 import com.alomonshi.app.service.user.service.UserService;
 import com.alomonshi.app.webapp.user.dto.UserDto;
@@ -19,6 +20,7 @@ import java.util.stream.Collectors;
 @Path("user")
 public class UserController {
 
+    @Produce
     @Inject
     private UserService userService;
 
