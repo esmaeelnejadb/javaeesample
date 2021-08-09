@@ -77,6 +77,10 @@
       <groupId>com.alomonshi.app</groupId>
       <artifactId>user</artifactId>
     </dependency>
+    <dependency>
+      <groupId>com.alomonshi.app</groupId>
+      <artifactId>event</artifactId>
+    </dependency>
   </dependencies>
 
   <build>

@@ -11,7 +11,7 @@ import javax.enterprise.inject.Produces;
 @RequestScoped
 public class UserServiceProducer {
 
-    private static String ENVIRONMENT = "test";
+    private static String ENVIRONMENT = "production";
 
     private UserService userService;
 

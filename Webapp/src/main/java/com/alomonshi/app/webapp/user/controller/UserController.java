@@ -14,7 +14,6 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @RequestScoped
 @Path("user")
@@ -53,6 +52,16 @@ public class UserController {
         user.setName(userDto.getName());
         user.setEmail(userDto.getEmail());
         userService.add(user);
-        return Response.ok(violations.stream().map(ConstraintViolation::getMessage).collect(Collectors.toList())).build();
+        return Response.ok("User is added").build();
+    }
+
+    @PUT
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response updateUser (UserDto userDto) {
+        User user = new User();
+        user.setName(userDto.getName());
+        user.setEmail(userDto.getEmail());
+        userService.update(user);
+        return Response.ok("User is updated").build();
     }
 }

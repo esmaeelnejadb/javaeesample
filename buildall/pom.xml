@@ -16,6 +16,7 @@
 		<module>../service</module>
         <module>../company</module>
         <module>../user</module>
+        <module>../event</module>
     </modules>
 
 </project>
